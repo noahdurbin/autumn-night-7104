@@ -15,20 +15,28 @@
 
       <h5>Enemies:</h5>
       <ul>
-        <% character.enemies.each do |enemy| %>
-          <li>
-            <%= enemy %>
-          </li>
+        <% if character.enemies %>
+          <% character.enemies.each do |enemy| %>
+            <li>
+              <%= enemy %>
+            </li>
+          <% end %>
+        <% else %>
+          <em><p>No enemies listed</p></em>
         <% end %>
       </ul>
 
       <h5>Allies:</h5>
       <ul>
-      <% character.allies.each do |ally| %>
-        <li>
-          <%= ally %>
-        </li>
-      <% end %>
+        <% if character.allies %>
+          <% character.allies.each do |ally| %>
+            <li>
+              <%= ally %>
+            </li>
+          <% end %>
+        <% else %>
+          <em><p>No allies listed</p></em>
+        <% end %>
       </ul>
     </div>
   <% end %>
